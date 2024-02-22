@@ -1,47 +1,38 @@
-// Задача 3. Фільтрація масиву чисел
+// Задача 3. Профіль гравця
 
-// Напиши функцію filterArray(numbers, value), яка приймає масив чисел(numbers) та значення(value) як параметри.
-// Функція повинна повертати новий масив лише тих чисел із масиву numbers, які більші за значення value.
+// Об’єкт profile описує профіль користувача на ігровій платформі. У його властивостях зберігається ім’я профілю username та кількість активних годин playTime, проведених у грі.
 
-// Усередині функції:
+// const profile = {
+//     username: "Jacob",
+//   playTime: 300,
+// };
 
-// Створи порожній масив, у який будеш додавати підходящі числа.
-// Використай цикл для ітерації кожного елемента масиву numbers.
-// Використовуй умовний оператор if усередині циклу для перевірки кожного елемента и додавання до свого масиву.
-// Поверни свій новий масив з підходящими числами як результат.
+// Доповни об’єкт profile методами для роботи з його властивостями.
 
+// Метод changeUsername(newName) повинен приймати рядок (нове ім’я) в параметр newName та змінювати значення властивості username на нове. Нічого не повертає.
+// Метод updatePlayTime(hours) повинен приймати число (кількість годин) у параметр hours та збільшити на нього значення властивості playTime. Нічого не повертає.
+// Метод getInfo() має повертати рядок формату <Username> has <amount> active hours!, де <Username> — це ім’я профілю, а <amount> — кількість ігрових годин.
 // Візьми код нижче і встав після оголошення своєї функції для перевірки коректності її роботи. У консоль будуть виведені результати її роботи.
 
-// console.log(filterArray([1, 2, 3, 4, 5], 3)); // [4, 5]
-// console.log(filterArray([1, 2, 3, 4, 5], 4)); // [5]
-// console.log(filterArray([1, 2, 3, 4, 5], 5)); // []
-// console.log(filterArray([12, 24, 8, 41, 76], 38)); // [41, 76]
-// console.log(filterArray([12, 24, 8, 41, 76], 20)); // [24, 41, 76]
+
+// console.log(profile.getInfo()); // "Jacob has 300 active hours!"
+
+// profile.changeUsername("Marco");
+// console.log(profile.getInfo()); // "Marco has 300 active hours!"
+
+// profile.updatePlayTime(20);
+// console.log(profile.getInfo()); // "Marco has 320 active hours!"
 
 // Залиш цей код для перевірки ментором.
+
 // На що буде звертати увагу ментор при перевірці:
 
-// Оголошена функція filterArray(numbers, value)
-// Виклик функції filterArray([1, 2, 3, 4, 5], 3) повертає [4, 5]
-// Виклик функції filterArray([1, 2, 3, 4, 5], 4) повертає [5]
-// Виклик функції filterArray([1, 2, 3, 4, 5], 5) повертає []
-// Виклик функції filterArray([12, 24, 8, 41, 76], 38) повертає [41, 76]
-// Виклик функції filterArray([12, 24, 8, 41, 76], 20) повертає [24, 41, 76]
-// Виклик функції filterArray() з випадковим масивом і числом повертає правильний масив
+// Оголошена змінна profile
+// Значення змінної profile — це об’єкт з властивостями username, playTime, getInfo, changeUsername і updatePlayTime
+// Значення властивості getInfo — це функція
+// Значення властивості changeUsername — це функція
+// Значення властивості updatePlayTime — це функція
+// Для звернення до властивостей об’єкта в його методах використовується this
 
 'use strict';
 
-function filterArray(numbers, value) {
-  const arrayNumbers = [];
-  for (const number of numbers) {
-    if (number > value) {
-      arrayNumbers.push(number);
-    }
-  }
-  return arrayNumbers;
-}
-console.log(filterArray([1, 2, 3, 4, 5], 3)); // [4, 5]
-console.log(filterArray([1, 2, 3, 4, 5], 4)); // [5]
-console.log(filterArray([1, 2, 3, 4, 5], 5)); // []
-console.log(filterArray([12, 24, 8, 41, 76], 38)); // [41, 76]
-console.log(filterArray([12, 24, 8, 41, 76], 20)); // [24, 41, 76]
